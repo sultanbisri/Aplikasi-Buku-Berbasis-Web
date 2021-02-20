@@ -1,0 +1,29 @@
+Query tambah brand :
+
+INSERT INTO brand (id, name) VALUES 
+(' ', 'Nuril Furqon'),
+(' ', 'Beni Nurfauzi'),
+(' ', 'M Giyas');
+
+Query tambah mobil :
+
+INSERT INTO cars (id,name, brand_id, image, color, description, create_time, update_time, stock) VALUES (NULL, 'Avanza', '1', 'avanza.jpg', 'Kuning', 'Mobil toyota avanza adalah mobil yang telah lama dan terlaris di indonesia', '2021-02-04', '2021-02-18', '25'), 
+(NULL, 'Xenia', '2', 'xeni.jpg', 'Hijau', 'Mobil daihatsu Xenia adalah mobil yang telah lama dan terlaris di indonesia', '2021-02-17', '2021-02-27', '30');
+
+query tambah customer :
+
+INSERT INTO customer (id, name, email, address) VALUES 
+(NULL, 'Sultan Bisri', 'sultanbisri@gmail.com', 'Ds. Singajaya Indramayu'), 
+(NULL, 'Muhammad Agung Sultani', 'agungsultani@gmail.com', 'Ds. Kedawung Kab. Cirebon');
+
+Query tampilkan data 1 mobil dengan Pembelinya / Customer :
+SELECT * FROM customer INNER JOIN cars WHERE customer.id = 1 = cars.id
+
+Query tampilkan semua data mobil :
+SELECT * FROM cars
+
+Query tampilan data Mobil per Brand :
+SELECT cars.*, brand.*
+FROM cars LEFT JOIN brand
+ON cars.brand_id=brand.id;
+
